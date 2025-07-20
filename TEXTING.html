@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovi Technology</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo-space">
+                <img src="img/logo.png" alt="DE OVI TECHNOLOGY Logo" class="site-logo">
+                <!-- Or use text if you don't have a logo image -->
+                <!-- <span class="site-logo-text">DE OVI TECHNOLOGY</span> -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="TEXTING.html">Home</a></li>
+                    <li><a href="About us.html">About us</a></li>
+                    <li><a href="Courses.html">Courses</a></li>
+                    <li><a href="Our-Teachers.html" class="active">Our Teachers</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                    <li><a href="More Information.html">More Information</a></li>
+                </ul>
+            </nav>
+            <a href="https://www.pinterest.com/" class="apply-btn">Apply Now</a>
+        </div>
+    </header>
+    <main class="bg">
+        <section id="home">
+            <h1>Welcome to DE OVI TECHNOLOGY</h1>
+            <p>We are a leading IT solutions provider, offering a wide range of services to help your business thrive in the digital age.</p>
+        </section>
+        <!-- Services Section: Well-arranged images and write-up -->
+        <section class="services-section" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
+            <div class="services-content" style="flex: 1 1 300px; min-width: 250px;">
+            <h2>OUR SERVICE</h2>
+            <p>
+                We offer a wide range of IT solutions, including web development, technical support, and digital consulting to help your business grow.
+            </p>
+            </div>
+            <div class="services-images" style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 2 1 400px; min-width: 250px;">
+            <img src="img/Computer teacher helping a pretty studen….jfif" alt="Computer teacher assisting student" class="services-image" style="width: 180px; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="img/8f49e987-b4f9-4e2d-a900-fcffb6b158ef.jfif" alt="Additional Service" class="services-image" style="width: 180px; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="img/45eab330-b2df-4058-acf8-b922ad6bccd0.jfif" alt="Additional Service" class="services-image" style="width: 180px; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="img/A global managed security operations center….jfif" alt="Additional Service" class="services-image" style="width: 180px; height: 120px; object-fit: cover; border-radius: 8px;">
+            </div>
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Computer Training</li>
+                <li>Computer Repair</li>
+                <li>Typing/Setting</li>
+                <li>Sim Registration</li>
+                <li>NIN Registration</li>
+                <li>Graphic Design</li>
+                <li>Web Development</li>
+                <li>Networking</li>
+
+            </ul>
+           
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: de.ovitech@gmail.com</p>
+            <p>Phone: 234 810 863 1599</p>
+        </section>
+    </main>
+    <footer style="background: #222; color: #fff; padding: 2rem 0; text-align: center; margin-top: 2rem;">
+        <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
+            <div style="flex: 1 1 200px; min-width: 180px; text-align: left;">
+                <h3 style="margin-bottom: 0.5rem; color: #ffd700;">Ovi Technology</h3>
+                <p style="margin: 0; font-size: 0.95rem;">Empowering your digital future with innovative IT solutions.</p>
+            </div>
+            <div style="flex: 1 1 150px; min-width: 120px;">
+                <h4 style="margin-bottom: 0.5rem; color: #ffd700;">Quick Links</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li><a href="#home" style="color: #fff; text-decoration: none;">Home</a></li>
+                    <li><a href="#Courses.html" style="color: #fff; text-decoration: none;">Courses</a></li>
+                    <li><a href="#services" style="color: #fff; text-decoration: none;">Our Teachers</a></li>
+                    <li><a href="#contact" style="color: #fff; text-decoration: none;">Events</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1 1 200px; min-width: 180px; text-align: left;">
+                <h4 style="margin-bottom: 0.5rem; color: #ffd700;">Contact</h4>
+                <p style="margin: 0; font-size: 0.95rem;">Email: <a href="mailto:de.ovitech@gmail.com" style="color: #fff; text-decoration: underline;">de.ovitech@gmail.com</a></p>
+                <p style="margin: 0; font-size: 0.95rem;">Phone: <a href="tel:2348108631599" style="color: #fff; text-decoration: underline;">234 810 863 1599</a></p>
+            </div>
+        </div>
+        <hr style="border: none; border-top: 1px solid #444; margin: 1.5rem 0;">
+        <p style="margin: 0; font-size: 0.9rem;">&copy; 2021 - <span id="year"></span> Ovi Technology. All rights reserved.</p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+</html>

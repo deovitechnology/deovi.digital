@@ -1,64 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Ovi Technology</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header>
-        <div class="header-inner">
-            <div class="logo-space">
-                <img src="img/logo.png" alt="DE OVI TECHNOLOGY Logo" class="site-logo">
-                <!-- Or use text if you don't have a logo image -->
-                <!-- <span class="site-logo-text">DE OVI TECHNOLOGY</span> -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>About — Ovi Technology</title>
+        <meta name="description" content="About Ovi Technology — mission, team and what we do.">
+        <link rel="icon" href="img/LOGO.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html">
+                    <img src="img/LOGO.png" alt="Ovi Technology" class="brand-logo">
+                    <span class="brand-text">Ovi Technology</span>
+                </a>
+
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="hamburger"></span>
+                </button>
+
+                <nav id="primary-navigation" class="primary-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="About us.html" class="nav-link active">About</a></li>
+                        <li><a href="Courses.html" class="nav-link">Courses</a></li>
+                        <li><a href="Our-Teachers.html" class="nav-link">Our Teachers</a></li>
+                        <li><a href="Events.html" class="nav-link">Events</a></li>
+                        <li><a href="More Information.html" class="nav-link">More Info</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a class="btn btn-primary" href="#contact">Apply Now</a>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="About us.html" class="active">About us</a></li>
-                    <li><a href="Courses.html">Courses</a></li>
-                    <li><a href="Our-Teachers.html" class="active">Our Teachers</a></li>
-                    <li><a href="Events.html">Events</a></li>
-                    <li><a href="More Information.html">More Information</a></li>
-                </ul>
-            </nav>
-            <a href="https://www.pinterest.com/" class="apply-btn">Apply Now</a>
-        </div>
-    </header>
-    <main class="bg">
-        <section class="about-section">
-            <img src="img/Computer teacher helping a pretty studen….jfif" alt="About Us">
-            <div class="about-section-content">
-                <h1>About DE OVI TECHNOLOGY</h1>
-                <p>
-                    DE OVI TECHNOLOGY is a leading IT solutions provider dedicated to empowering individuals and businesses in the digital age. 
-                    Our team of experienced professionals offers a wide range of services, including computer training, type Setting, photocopy, printing, internet, NIN Registration,Sim Registration, Networking, web development, technical support, and digital consulting.
-                </p>
-                <p>
-                    We are committed to delivering innovative solutions and exceptional customer service, helping our clients achieve their goals and stay ahead in a rapidly evolving technology landscape.
-                </p>
+        </header>
+
+        <main id="main">
+            <section class="container about-hero">
+                <div class="about-grid">
+                    <img src="img/victor's pics.png" alt="CEO" class="about-photo">
+                    <div>
+                        <h1>About Ovi Technology</h1>
+                        <p>Ovi Technology empowers individuals and businesses with practical IT training and dependable digital services. We focus on hands-on skills that translate directly to employment and entrepreneurship.</p>
+                        <p class="lead">Our team combines industry experience with a passion for teaching—every course includes projects, mentorship, and real-world outcomes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container mission">
+                <h2>Mission & Values</h2>
+                <div class="mission-card-grid">
+                    <div class="mission-card">
+                        <h3>Practical Learning</h3>
+                        <p>Project-based training that builds real skills and confidence.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Community Impact</h3>
+                        <p>Programs that support youth and local businesses to grow digital skills.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Quality & Support</h3>
+                        <p>Experienced instructors and career support for students.</p>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <h3>Our Story</h3>
+                    <div class="timeline-item"><div class="dot"></div><div><strong>2020</strong><p>Ovi Technology founded to provide local IT training.</p></div></div>
+                    <div class="timeline-item"><div class="dot"></div><div><strong>2021</strong><p>Expanded courses and introduced placement support.</p></div></div>
+                    <div class="timeline-item"><div class="dot"></div><div><strong>2023</strong><p>Launched new digital services and remote learning options.</p></div></div>
+                </div>
+            </section>
+
+            <section class="container team">
+                <h2>Meet the team</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="img/prince.jpg" alt="Mr. Ogbonnaya Victor" class="team-photo">
+                        <div>
+                            <h3>Mr. Prince Solomon</h3>
+                            <p>Branch Manager.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="img/chioma.JPG" alt="Ms. Josephat Chioma" class="team-photo">
+                        <div>
+                            <h3>Miss. Josephat Chioma</h3>
+                            <p>Cashier &amp; Admin Officer</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="img/sam.JPG" alt="Mr. Richard Samuel" class="team-photo">
+                        <div>
+                            <h3>Mr. Richard Samuel</h3>
+                            <p>Senior Instructor — Hardware & repairs.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="img/divine.jpg" alt="Ms. Josephat Chioma" class="team-photo">
+                        <div>
+                            <h3>Miss. Orji Divinefavour</h3>
+                            <p>Asst. Admin &amp; Supervisor.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <div class="footer-col">
+                    <img src="img/LOGO.png" alt="Ovi Technology logo" class="footer-logo">
+                    <p>Empowering your digital future with practical IT training and services.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Courses.html">Courses</a></li>
+                        <li><a href="Our-Teachers.html">Our Teachers</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><a href="mailto:de.ovitech@gmail.com">de.ovitech@gmail.com</a></p>
+                    <p><a href="tel:+2348108631599">+234 810 863 1599</a></p>
+                </div>
             </div>
-        </section>
-        <!-- CEO Section -->
-        <section class="ceo-section">
-            <img src="img/victor's pics.png" alt="CEO Photo" class="ceo-photo">
-            <div class="ceo-content">
-                <h2>About Our CEO</h2>
-                <p>
-                    Mr. Ogbonnaya Victor Ikechukwu is the visionary founder and CEO of DE OVI TECHNOLOGY. With a passion for technology and innovation, he has led the company to become a trusted leader in IT solutions and digital services.
-                </p>
-                <p>
-                    Under his leadership, the company has empowered countless individuals and businesses to achieve their digital goals. Mr. Ovi is committed to excellence, continuous learning, and delivering value to every client.
-                </p>
+            <div class="footer-bottom">
+                <small>&copy; <span id="year">2025</span> Ovi Technology. All rights reserved.</small>
             </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 DE OVI TECHNOLOGY. All rights reserved.</p>
-            <p>Contact: <a href="mailto:de.ovitech@gmail.com">de.ovitech@gmail.com</a> | Phone: 234 810 863 1599</p>
-        </div>
-    </footer>
+        </footer>
+
+        <script>
+            (function(){
+                const btn = document.querySelector('.nav-toggle');
+                const nav = document.getElementById('primary-navigation');
+                if(btn && nav){
+                    btn.addEventListener('click', ()=>{
+                        const expanded = btn.getAttribute('aria-expanded') === 'true';
+                        btn.setAttribute('aria-expanded', String(!expanded));
+                        nav.classList.toggle('open');
+                    });
+                }
+            })();
+            const yearEl = document.getElementById('year'); if(yearEl) yearEl.textContent = new Date().getFullYear();
+        </script>
+    </body>
 </html>

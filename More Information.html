@@ -1,83 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>More Information - Ovi Technology</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>More Information — Ovi Technology</title>
+  <meta name="description" content="More information about Ovi Technology, gallery and contact details.">
+  <link rel="icon" href="img/LOGO.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <div class="logo-space">
-                <img src="img/logo.png" alt="DE OVI TECHNOLOGY Logo" class="site-logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="About us.html">About us</a></li>
-                    <li><a href="Courses.html">Courses</a></li>
-                    <li><a href="Our-Teachers.html">Our Teachers</a></li>
-                    <li><a href="Events.html">Events</a></li>
-                    <li><a href="More Information.html" class="active">More Information</a></li>
-                </ul>
-            </nav>
-            <a href="#apply" class="apply-btn">Apply Now</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/LOGO.png" alt="Ovi Technology" class="brand-logo">
+        <span class="brand-text">Ovi Technology</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="hamburger"></span>
+      </button>
+      <nav id="primary-navigation" class="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="About us.html" class="nav-link">About</a></li>
+          <li><a href="Courses.html" class="nav-link">Courses</a></li>
+          <li><a href="Our-Teachers.html" class="nav-link">Our Teachers</a></li>
+          <li><a href="Events.html" class="nav-link">Events</a></li>
+          <li><a href="More Information.html" class="nav-link active">More Info</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-primary" href="https://forms.gle/TxVWyhgLayxFFhMk9">Apply Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container page-hero">
+      <h1>More about Ovi Technology</h1>
+      <p class="lead">Everything you need to know — facilities, gallery, videos and frequently asked questions.</p>
+    </section>
+
+    <section class="container info-section">
+      <h2>At a glance</h2>
+      <div class="info-cards">
+        <div class="info-card"><h3>Hands-on Training</h3><p>Practical, project-based courses tailored for immediate job readiness.</p></div>
+        <div class="info-card"><h3>Experienced Instructors</h3><p>Industry-experienced teachers who mentor and guide real projects.</p></div>
+        <div class="info-card"><h3>Support & Placement</h3><p>Internship and job placement support for qualified graduates.</p></div>
+      </div>
+    </section>
+
+    <section class="container media-section">
+      <h2>Gallery & Videos</h2>
+      <div class="media-grid">
+        <img src="img/classroom 1.jpg" alt="Classroom">
+        <img src="img/s2.jfif" alt="Graduation Event">
+        <img src="img/student 3.jfif" alt="Seminar">
+        <img src="img/student 2.jpg" alt="Teachers Group">
+      </div>
+      <div class="video-container">
+        <div class="video-wrapper">
+          <video controls>
+            <source src="videos/tik.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
-    </header>
-    <main class="bg">
-        <section class="info-section">
-            <h1>More About DE OVI TECHNOLOGY</h1>
-            <p>
-                DE OVI TECHNOLOGY is more than just an IT training center. We are a hub for innovation, creativity, and digital empowerment. Our mission is to provide practical skills, mentorship, and opportunities for everyone to thrive in the digital world.
-            </p>
-            <ul>
-                <li>We offer hands-on workshops and seminars on trending technologies.</li>
-                <li>Our center is equipped with modern computers, fast internet, and comfortable learning spaces.</li>
-                <li>We support community outreach, free digital literacy programs, and youth empowerment initiatives.</li>
-                <li>Our alumni work in top companies and run successful businesses.</li>
-                <li>We organize tech competitions, hackathons, and career fairs.</li>
-                <li>We provide internship and job placement support for our students.</li>
-            </ul>
-        </section>
-        <section class="media-section">
-            <h2>Gallery & Media</h2>
-            <div class="media-grid">
-                <img src="img/classroom 1.jpg" alt="Classroom" />
-                <img src="img/s2.jfif" alt="Graduation Event" />
-                <img src="img/student 3.jfif" alt="Seminar" />
-                <img src="img/student 2.jpg" alt="Teachers Group" />
-                <!-- Add more images as needed -->
-            </div>
-            <div class="video-container">
-                <h3>Watch Our Center in Action</h3>
-                <video controls width="400">
-                    <source src="videos/tik.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                 <video controls width="400">
-                    <source src="videos/tik 2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                 <video controls width="400">
-                    <source src="videos/lesson.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </section>
-        <section class="contact-section">
-            <h2>Contact & Location</h2>
-            <p>Visit us at: 123 Ovi Tech Road, City, Country</p>
-            <p>Email: <a href="mailto:de.ovitech@gmail.com">de.ovitech@gmail.com</a></p>
-            <p>Phone: <a href="tel:2348108631599">234 810 863 1599</a></p>
-            <iframe src="https://www.google.com/maps/dir/DE+OVI+TECHNOLOGY,+Ezinta+street,+ogo+Asaga+Asaga+village+Arochukwu+New+Market+Road,+Opposite+Chemist+Shop,+Obinkita,+442002,+Arochukwu,+Nigeria/DE+OVI+TECHNOLOGY,+Ezinta+street,+ogo+Asaga+Asaga+village+Arochukwu+New+Market+Road,+Opposite+Chemist+Shop,+Obinkita,+442002,+Arochukwu,+Nigeria/@5.4055867,7.8119203,12.75z/data=!4m13!4m12!1m5!1m1!1s0x105d3745809c6361:0xa2cf37cfe5909c69!2m2!1d7.8867021!2d5.3844533!1m5!1m1!1s0x105d3745809c6361:0xa2cf37cfe5909c69!2m2!1d7.8867021!2d5.3844533?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 DE OVI TECHNOLOGY. All rights reserved.</p>
-            <p>Contact: <a href="mailto:de.ovitech@gmail.com">de.ovitech@gmail.com</a> | Phone: 234 810 863 1599</p>
+        <div class="video-wrapper">
+          <video controls>
+            <source src="videos/tik 2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
-    </footer>
+        <div class="video-wrapper">
+          <video controls>
+            <source src="videos/lesson.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="container info-section">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question">How do I apply?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Click the 'Apply Now' button on any page or email <a href="mailto:de.ovitech@gmail.com">de.ovitech@gmail.com</a> for guidance.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you provide certificates?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Yes — we provide certificates upon successful completion of selected courses.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Are there part-time options?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Yes — we offer flexible schedules including evening and weekend classes.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container contact-section" id="contact">
+      <h2>Contact & Location</h2>
+      <p>Visit us at: A-line No 14 Airtel Shop, Market road Obinkita Arochukwu, Abia State</p>
+      <p>Email: <a href="mailto:de.ovitech@gmail.com">de.ovitech@gmail.com</a></p>
+      <p>Phone: <a href="tel:+2348108631599">+234 810 863 1599</a></p>
+      <div style="margin-top:1rem;">
+        <iframe src="https://www.google.com/maps" width="100%" height="260" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <img src="img/LOGO.png" alt="logo" class="footer-logo">
+        <p>Practical IT training & services.</p>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Courses.html">Courses</a></li>
+          <li><a href="Our-Teachers.html">Teachers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:de.ovitech@gmail.com">de.ovitech@gmail.com</a></p>
+        <p><a href="tel:+2348108631599">+234 810 863 1599</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom"><small>&copy; <span id="year">2025</span> Ovi Technology</small></div>
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('primary-navigation');
+      if (btn && nav) {
+        btn.addEventListener('click', function(){
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('open');
+        });
+      }
+
+      // FAQ accordion
+      document.querySelectorAll('.faq-item').forEach(function(item){
+        item.querySelector('.faq-question').addEventListener('click', function(){
+          item.classList.toggle('open');
+        });
+      });
+
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>

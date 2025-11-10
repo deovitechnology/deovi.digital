@@ -37,37 +37,33 @@
 
         <div class="header-actions">
           <a class="btn btn-primary" href="https://forms.gle/TxVWyhgLayxFFhMk9">Apply Now</a>
+          <button class="btn btn-accent" id="loginBtn" type="button">Login</button>
         </div>
       </div>
     </header>
 
     <main id="main">
-      <section class="container page-hero">
+      <section class="container page-hero fade-in-up tech-hero">
         <div class="hero-inner">
           <div class="hero-copy">
-            <h1>Professional IT training & solutions</h1>
-            <div class="subtitle">Learn practical skills employers actually hire for</div>
-            <p class="lead">Practical, hands-on courses and services in web development, networking, hardware repair and digital marketing. Learn the skills employers need.</p>
-            <div style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap">
-              <a class="btn btn-accent" href="Courses.html">View Courses</a>
-              <a class="btn btn-ghost" href="About us.html">Our Story</a>
+            <h1 class="tech-title">Empower Your Future with <span class="gradient-text">Tech Skills</span></h1>
+            <div class="subtitle">Professional Online IT Training & Digital Solutions</div>
+            <p class="lead">Join our vibrant tech community and gain hands-on experience in web development, networking, digital marketing, and more. Get expert help for your tech projects—anywhere, anytime.</p>
+            <div class="cta-group">
+              <a class="btn btn-primary pulse" href="#join-online" id="joinOnlineBtn">Click here to join our online classes</a>
+              <a class="btn btn-accent pulse" href="#request-tech" id="requestTechBtn">Click here to be attended to for online tech work</a>
             </div>
-
+            <div style="margin-top:.5rem">
+              <button id="altAnimBtn" class="btn btn-ghost" aria-pressed="false" title="Try alternate heading animation">Try alternate animation</button>
+            </div>
             <div class="stats" aria-hidden="true">
               <div class="stat"><h3>1,200+</h3><p>Graduates</p></div>
               <div class="stat"><h3>500+</h3><p>Projects built</p></div>
               <div class="stat"><h3>10+</h3><p>Years experience</p></div>
             </div>
-
-            <div class="cta-hero">
-              <strong>Ready to start?</strong>
-              <p class="testimonial-text">Apply today and join a community of skilled learners. Scholarships available for eligible applicants.</p>
-              <div style="margin-top:.6rem"><a class="btn" href="https://forms.gle/TxVWyhgLayxFFhMk9">Apply Now</a></div>
-            </div>
           </div>
-
           <div class="hero-media">
-            <img src="img/pic for web.jpg" alt="Students learning" class="hero-image">
+            <img src="img/pic for web.jpg" alt="Students learning" class="hero-image tech-glow">
             <div class="testimonials">
               <div class="testimonial-card" style="margin-top:1rem">
                 <div class="testimonial-meta"><img src="img/victor.jpg" alt="Victor"><div><strong>Victor I.</strong><div class="muted">Founder & Lead Instructor</div></div></div>
@@ -77,8 +73,36 @@
           </div>
         </div>
       </section>
+    <!-- Online Classes Section -->
+    <section class="container fade-in-up" id="join-online" style="margin-top:3rem;">
+      <div class="card" style="text-align:center;max-width:600px;margin:0 auto;">
+        <h2>Join Our Online Classes</h2>
+        <p>Learn from anywhere! Our online classes are interactive, practical, and led by industry experts. Get started now and unlock your tech career.</p>
+        <a class="btn btn-primary" href="https://forms.gle/TxVWyhgLayxFFhMk9" target="_blank">Register for Online Classes</a>
+      </div>
+    </section>
 
-      <section class="container services" id="services">
+    <!-- Online Tech Work Section -->
+    <section class="container fade-in-up" id="request-tech" style="margin-top:2rem;">
+      <div class="card" style="text-align:center;max-width:600px;margin:0 auto;">
+        <h2>Request Online Tech Work</h2>
+        <p>Need a website, app, or digital solution? Our tech team is ready to help you remotely. Click below to get started and be attended to by our professionals.</p>
+        <a class="btn btn-accent" href="mailto:de.ovitech@gmail.com?subject=Request%20for%20Online%20Tech%20Work" target="_blank">Request Tech Work</a>
+      </div>
+    </section>
+    <script>
+      // Smooth scroll for CTA buttons
+      document.getElementById('joinOnlineBtn').onclick = function(e) {
+        e.preventDefault();
+        document.getElementById('join-online').scrollIntoView({behavior:'smooth'});
+      };
+      document.getElementById('requestTechBtn').onclick = function(e) {
+        e.preventDefault();
+        document.getElementById('request-tech').scrollIntoView({behavior:'smooth'});
+      };
+    </script>
+
+  <section class="container services fade-in-up" id="services">
         <h2>Our Services</h2>
         <div class="services-grid">
           <article class="card service-card">
@@ -120,7 +144,7 @@
          </div>
        </section>
 
-      <section class="container testimonials">
+  <section class="container testimonials fade-in-up">
         <h2>Student highlights</h2>
         <div class="testimonials" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem">
           <div class="testimonial-card"><div class="testimonial-meta"><img src="img/sam.JPG" alt="Sam"><div><strong>Sam</strong><div class="muted">Web dev graduate</div></div></div><p class="testimonial-text">"I built a freelancing website in 4 weeks and already have clients."</p></div>
@@ -128,7 +152,7 @@
         </div>
       </section>
 
-      <section class="container contact" id="contact">
+  <section class="container contact fade-in-up" id="contact">
         <div class="contact-card">
           <h2>Get in touch</h2>
           <p>Email: <a href="mailto:de.ovitech@gmail.com">de.ovitech@gmail.com</a> | Phone: <a href="tel:+2348108631599">+234 810 863 1599</a></p>
@@ -137,7 +161,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+  <footer class="site-footer fade-in-up">
       <div class="container footer-inner">
         <div class="footer-col">
           <img src="img/LOGO.png" alt="Ovi Technology logo" class="footer-logo">
@@ -162,6 +186,23 @@
         <small>&copy; <span id="year">2025</span> Ovi Technology. All rights reserved.</small>
       </div>
     </footer>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm" autocomplete="off">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:1rem">Login</button>
+        </form>
+        <div id="loginMessage" style="margin-top:1rem;color:var(--accent);"></div>
+      </div>
+    </div>
+    <script src="js/animations.js"></script>
+    <script src="js/login.js"></script>
     <script>
       (function(){
         const btn = document.querySelector('.nav-toggle');

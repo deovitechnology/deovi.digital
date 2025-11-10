@@ -1,3 +1,189 @@
+/* ---------- Tech Hero & Professional Look ---------- */
+.tech-hero {
+  background: linear-gradient(120deg, #0f172a 0%, #2563eb 60%, #3b82f6 100%);
+  color: #fff;
+  border-radius: 0 0 3rem 3rem;
+  box-shadow: 0 8px 32px rgba(37,99,235,0.13);
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.tech-title {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 1.2rem;
+}
+.gradient-text {
+  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.tech-hero .subtitle, .tech-hero .lead {
+  color: #e0e7ef;
+}
+.cta-group {
+  display: flex;
+  gap: 1.2rem;
+  margin: 2rem 0 2.5rem 0;
+  flex-wrap: wrap;
+}
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(59,130,246,0.3); }
+  70% { box-shadow: 0 0 0 12px rgba(59,130,246,0); }
+  100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+}
+.tech-glow {
+  box-shadow: 0 0 40px 0 #38bdf8, 0 0 80px 0 #6366f1;
+  border: 3px solid #38bdf8;
+}
+
+/* ---------- Animated Heading (per-character) ---------- */
+.tech-title { perspective: 800px; display: inline-block; }
+.tech-title .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(28px) rotateX(18deg);
+  transform-origin: 50% 50% -10px;
+  transition: transform 560ms cubic-bezier(.2,.9,.2,1), opacity 420ms ease;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+.tech-title .char.space { width: 0.45em; }
+
+/* Gradient shimmer for highlighted words */
+.gradient-text {
+  background: linear-gradient(90deg, #38bdf8 0%, #8b5cf6 40%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* fallback */
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  position: relative;
+}
+.gradient-text::after {
+  content: '';
+  position: absolute;
+  left: -20%; top: 0; bottom: 0; width: 140%;
+  background: inherit;
+  filter: blur(12px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.gradient-text {
+  background-size: 200% 100%;
+  animation: shimmer 3.5s linear infinite;
+}
+
+/* ---------- Alternate: Typewriter + Cursor ---------- */
+.typewriter-wrapper { display:inline-block; }
+.typewriter {
+  font-weight: 800;
+  font-size: inherit;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.typewriter .cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  background: #fff;
+  margin-left: 6px;
+  animation: blink 1s steps(2,end) infinite;
+  vertical-align: middle;
+}
+@keyframes blink { 50% { opacity: 0 } }
+
+/* subtle per-character wave for alternative look */
+.char-wave { display:inline-block; opacity:0; transform: translateY(8px); transition: transform 420ms cubic-bezier(.2,.9,.2,1), opacity 360ms ease; }
+.char-wave.visible { opacity:1; transform: none; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .char, .char-wave { transition: none !important; transform: none !important; }
+  .gradient-text { animation: none !important; }
+  .typewriter .cursor { animation: none !important; opacity: 1; }
+}
+/* ---------- Animations ---------- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Modal (Login) ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(30, 41, 59, 0.45);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s;
+}
+.modal-content {
+  background: #fff;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(37,99,235,0.13);
+  max-width: 350px;
+  width: 90vw;
+  position: relative;
+  animation: fadeIn 0.4s;
+}
+.modal-content h2 {
+  margin-bottom: 1.2rem;
+  color: var(--brand);
+  text-align: center;
+}
+.modal-content label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: border 0.2s;
+}
+.modal-content input:focus {
+  border: 1.5px solid var(--brand);
+  outline: none;
+}
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close:hover {
+  color: var(--brand);
+}
 /* ---------- Variables & Base ---------- */
 :root{
   --bg: #f6f9fc;

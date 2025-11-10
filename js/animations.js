@@ -17,36 +17,55 @@ function animateTitle() {
   const raw = el.textContent || el.innerText;
   const highlight = 'Tech Skills';
   const startIndex = raw.indexOf(highlight);
-  // Build spans for each character
-  el.innerHTML = '';
-  for (let i = 0; i < raw.length; i++) {
-    const ch = raw[i];
-    const span = document.createElement('span');
-    span.className = 'char';
-    if (ch === ' ') span.classList.add('space');
-    // mark highlighted range for gradient
-    if (startIndex >= 0 && i >= startIndex && i < startIndex + highlight.length) {
-      span.classList.add('gradient-text');
+
+  function createCharSpans() {
+    el.innerHTML = '';
+    for (let i = 0; i < raw.length; i++) {
+      const ch = raw[i];
+      const span = document.createElement('span');
+      span.className = 'char';
+      if (ch === ' ') span.classList.add('space');
+      if (startIndex >= 0 && i >= startIndex && i < startIndex + highlight.length) {
+        span.classList.add('gradient-text');
+      }
+      span.textContent = ch;
+      el.appendChild(span);
     }
-    span.textContent = ch;
-    el.appendChild(span);
+    return el.querySelectorAll('.char');
   }
 
-  // Trigger staggered animation
-  const chars = el.querySelectorAll('.char');
-  chars.forEach((s, i) => {
-    // small stagger, faster feel for professional look
-    const delay = i * 40; // ms
-    s.style.transitionDelay = `${delay}ms`;
-  });
-
-  // force reflow then start
-  requestAnimationFrame(() => {
-    chars.forEach((s) => {
-      s.style.opacity = '1';
-      s.style.transform = 'none';
+  function animateCycle() {
+    const chars = createCharSpans();
+    // Reset initial state
+    chars.forEach(s => {
+      s.style.opacity = '0';
+      s.style.transform = 'translateY(28px) rotateX(18deg)';
     });
-  });
+    
+    // Trigger entrance
+    requestAnimationFrame(() => {
+      chars.forEach((s, i) => {
+        s.style.transitionDelay = `${i * 40}ms`;
+        s.style.opacity = '1';
+        s.style.transform = 'none';
+      });
+    });
+
+    // Schedule exit animation
+    const totalDuration = (chars.length * 40) + 2000; // entrance + hold
+    setTimeout(() => {
+      chars.forEach((s, i) => {
+        s.style.transitionDelay = `${i * 30}ms`;
+        s.style.opacity = '0';
+        s.style.transform = 'translateY(-28px) rotateX(-18deg)';
+      });
+      // Schedule next cycle
+      setTimeout(animateCycle, chars.length * 30 + 500);
+    }, totalDuration);
+  }
+
+  // Start the loop
+  animateCycle();
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -93,53 +112,68 @@ function animateTitleTypewriter() {
   if (!el) return;
   const raw = (el.textContent || el.innerText).trim();
   const highlight = 'Tech Skills';
-  // Prepare wrapper
-  el.innerHTML = '';
-  const wrapper = document.createElement('span');
-  wrapper.className = 'typewriter-wrapper';
-  const line = document.createElement('span');
-  line.className = 'typewriter';
-  wrapper.appendChild(line);
-  const cursor = document.createElement('span');
-  cursor.className = 'cursor';
-  cursor.classList.add('cursor');
-  // We'll build the full target string but reveal progressively
-  let target = raw;
-  // Mark gradient substring positions
-  const startIndex = target.indexOf(highlight);
-  // We'll progressively add characters
-  let i = 0;
-  const typingSpeed = 60; // ms per char
-  el.appendChild(wrapper);
-  wrapper.appendChild(cursor);
 
-  const interval = setInterval(() => {
-    if (i >= target.length) {
-      clearInterval(interval);
-      // replace spans for highlighted substring with gradient-text
-      if (startIndex >= 0) {
-        // build final content with gradient spans
-        line.innerHTML = '';
-        for (let j = 0; j < target.length; j++) {
-          const ch = target[j];
-          const span = document.createElement('span');
-          span.textContent = ch;
-          if (startIndex >= 0 && j >= startIndex && j < startIndex + highlight.length) span.classList.add('gradient-text');
-          line.appendChild(span);
+  function startTypewriterCycle() {
+    el.innerHTML = '';
+    const wrapper = document.createElement('span');
+    wrapper.className = 'typewriter-wrapper';
+    const line = document.createElement('span');
+    line.className = 'typewriter';
+    wrapper.appendChild(line);
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor';
+    cursor.classList.add('cursor');
+    
+    let target = raw;
+    const startIndex = target.indexOf(highlight);
+    let i = 0;
+    const typingSpeed = 60;
+    el.appendChild(wrapper);
+    wrapper.appendChild(cursor);
+
+    function type() {
+      const interval = setInterval(() => {
+        if (i >= target.length) {
+          clearInterval(interval);
+          if (startIndex >= 0) {
+            line.innerHTML = '';
+            for (let j = 0; j < target.length; j++) {
+              const ch = target[j];
+              const span = document.createElement('span');
+              span.textContent = ch;
+              if (j >= startIndex && j < startIndex + highlight.length) span.classList.add('gradient-text');
+              line.appendChild(span);
+            }
+          }
+          // Hold for a moment, then start erasing
+          setTimeout(erase, 2000);
+          return;
         }
-      }
-      // animate subtle per-character wave entrance for polish
-      const chars = line.querySelectorAll('span');
-      chars.forEach((s, idx) => {
-        s.classList.add('char-wave');
-        setTimeout(() => s.classList.add('visible'), idx * 35);
-      });
-      return;
+        line.textContent = (line.textContent || '') + target[i];
+        i++;
+      }, typingSpeed);
     }
-    // append next character
-    const nextChar = target[i];
-    // append into line as a text node (we'll rebuild at end to add gradient)
-    line.textContent = (line.textContent || '') + nextChar;
-    i++;
-  }, typingSpeed);
+
+    function erase() {
+      const eraseSpeed = 30;
+      const interval = setInterval(() => {
+        const text = line.textContent;
+        if (!text.length) {
+          clearInterval(interval);
+          setTimeout(() => {
+            el.innerHTML = '';
+            startTypewriterCycle();
+          }, 500);
+          return;
+        }
+        line.textContent = text.slice(0, -1);
+      }, eraseSpeed);
+    }
+
+    // Start the cycle
+    type();
+  }
+
+  // Begin the loop
+  startTypewriterCycle();
 }
